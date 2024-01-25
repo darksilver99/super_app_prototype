@@ -50,7 +50,7 @@ class _WalletsPageWidgetState extends State<WalletsPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).accent1,
         body: SafeArea(
           top: true,
           child: Column(
