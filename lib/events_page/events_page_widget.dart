@@ -50,7 +50,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).accent1,
         body: SafeArea(
           top: true,
           child: ListView(
