@@ -21,4 +21,5 @@ Future getDataList() async {
   for (var i = 0; i < jsonData.length; i++) {
     FFAppState().addToTestList(jsonData);
   }
+  print(FFAppState().testList);
 }
