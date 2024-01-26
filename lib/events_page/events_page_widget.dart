@@ -1,8 +1,11 @@
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'events_page_model.dart';
@@ -20,6 +23,47 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
   late EventsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'columnOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(30.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'columnOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(30.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
@@ -59,7 +103,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF181A1E),
+        backgroundColor: Color(0xFF2B2E36),
         body: SafeArea(
           top: true,
           child: Column(
@@ -232,9 +276,9 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.network(
-                                                    'https://picsum.photos/seed/866/600',
+                                                    'https://images.unsplash.com/photo-1505842465776-3b4953ca4f44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8ZmVzdGl2YWx8ZW58MHx8fHwxNzA2MjM3NTY0fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                                     width: double.infinity,
-                                                    height: 120.0,
+                                                    height: 150.0,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -384,7 +428,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                         .secondaryText,
                                   ),
                                 ],
-                              );
+                              ).animateOnPageLoad(
+                                  animationsMap['columnOnPageLoadAnimation1']!);
                             },
                           );
                         },
@@ -531,7 +576,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   child: Image.network(
                                                     'https://picsum.photos/seed/866/600',
                                                     width: double.infinity,
-                                                    height: 120.0,
+                                                    height: 150.0,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -681,7 +726,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                         .secondaryText,
                                   ),
                                 ],
-                              );
+                              ).animateOnPageLoad(
+                                  animationsMap['columnOnPageLoadAnimation2']!);
                             },
                           );
                         },
