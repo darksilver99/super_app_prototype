@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 Future getDataList() async {
   // Add your function code here!
   print("getDataList");
-  var url = "https://silver-api.com/webboard/App_api_v1/webboardList";
+  var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
   Map<String, String> header = {};
   var body = {};
   var response =
