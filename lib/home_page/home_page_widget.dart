@@ -295,9 +295,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.delayed(const Duration(milliseconds: 1500));
       await actions.getDataList();
-      setState(() {});
+      setState(() {
+        _model.isLoading = false;
+      });
     });
 
     _model.textController ??= TextEditingController();
@@ -829,7 +830,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
                                     onFieldSubmitted: (_) async {
+                                      setState(() {
+                                        _model.isLoading = true;
+                                      });
                                       await actions.getDataList();
+                                      setState(() {
+                                        _model.isLoading = false;
+                                      });
                                     },
                                     textInputAction: TextInputAction.search,
                                     obscureText: false,
