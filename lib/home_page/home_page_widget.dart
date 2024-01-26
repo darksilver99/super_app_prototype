@@ -853,7 +853,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textController',
-                                    Duration(milliseconds: 2000),
+                                    Duration(milliseconds: 200),
                                     () => setState(() {}),
                                   ),
                                   onFieldSubmitted: (_) async {
