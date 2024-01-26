@@ -21,7 +21,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for LoadingView component.
   late LoadingViewModel loadingViewModel;
   // State field(s) for TextField widget.
@@ -36,7 +35,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   }
 
   void dispose() {
-    unfocusNode.dispose();
     loadingViewModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
