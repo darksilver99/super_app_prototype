@@ -14,11 +14,14 @@ Future getDataList(String? str) async {
   // Add your function code here!
   await Future.delayed(Duration(milliseconds: 1200));
   print("getDataList");
-  var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  var url = "https://silver-api.com/webboard/App_api_v1/testDataListaa";
   Map<String, String> header = {};
   var body = {"str": str};
   var response =
       await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
+  if (response.statusCode != 200) {
+    return;
+  }
   List<dynamic> jsonData = json.decode(response.body);
   List<TestListJsonStruct> list = jsonData
       .map((jsonItem) => TestListJsonStruct(
