@@ -260,12 +260,50 @@ class _HomePageWidgetState extends State<HomePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-20.0, 0.0),
+          begin: Offset(0.0, 20.0),
           end: Offset(0.0, 0.0),
         ),
       ],
     ),
     'rowOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 300.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 300.ms,
+          begin: Offset(0.0, -10.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation3': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation3': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -331,8 +369,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 height: double.infinity,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xFF034A46), Color(0xFF68B848)],
-                    stops: [0.0, 1.0],
+                    colors: [
+                      Colors.black,
+                      Color(0xFF034A46),
+                      Color(0xFF68B848)
+                    ],
+                    stops: [0.0, 0.5, 1.0],
                     begin: AlignmentDirectional(1.0, 0.34),
                     end: AlignmentDirectional(-1.0, -0.34),
                   ),
@@ -782,6 +824,220 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ],
                         ),
                       ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 16.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 16.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      'Today events',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                  ),
+                                  Text(
+                                    'view more',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ],
+                              ).animateOnPageLoad(
+                                  animationsMap['rowOnPageLoadAnimation2']!),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: Builder(
+                                builder: (context) {
+                                  final testList =
+                                      FFAppState().testList.toList();
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(testList.length,
+                                          (testListIndex) {
+                                        final testListItem =
+                                            testList[testListIndex];
+                                        return Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 8.0, 0.0),
+                                          child: Container(
+                                            width: 200.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    bottomLeft:
+                                                        Radius.circular(0.0),
+                                                    bottomRight:
+                                                        Radius.circular(0.0),
+                                                    topLeft:
+                                                        Radius.circular(16.0),
+                                                    topRight:
+                                                        Radius.circular(16.0),
+                                                  ),
+                                                  child: Image.network(
+                                                    'https://picsum.photos/seed/928/600',
+                                                    width: 200.0,
+                                                    height: 120.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        'Campfire Retreat',
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        maxLines: 1,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color:
+                                                                  Colors.black,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                            ),
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .av_timer_rounded,
+                                                            color: Colors.black,
+                                                            size: 18.0,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              '19:00 - 22:00',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    color: Colors
+                                                                        .black,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .pin_drop_rounded,
+                                                            color: Colors.black,
+                                                            size: 18.0,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'The Forestias',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    color: Colors
+                                                                        .black,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'containerOnPageLoadAnimation3']!),
+                                        );
+                                      }),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ].addToEnd(SizedBox(height: 64.0)),
                   ),
                 ),
@@ -894,7 +1150,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                     ),
                   ],
-                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation2']!),
+                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation3']!),
               ),
             ],
           ),
