@@ -869,6 +869,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         _model.isLoading = true;
                                       });
                                       await actions.getDataList();
+                                      await actions.hideKeyboard(
+                                        context,
+                                      );
                                       setState(() {
                                         _model.isLoading = false;
                                       });
