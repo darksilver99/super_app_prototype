@@ -28,5 +28,4 @@ Future getDataList(String? str) async {
           ))
       .toList();
   FFAppState().testList = list;
-  print(FFAppState().testList[0].subject);
 }
