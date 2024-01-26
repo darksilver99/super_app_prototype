@@ -56,11 +56,12 @@ class _ComingSoonViewWidgetState extends State<ComingSoonViewWidget> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
+                height: 60.0,
                 decoration: BoxDecoration(),
                 child: Lottie.asset(
                   'assets/lottie_animations/Animation_-_1706261454000.json',
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 130.0,
+                  width: MediaQuery.sizeOf(context).width * 0.5,
+                  height: 100.0,
                   fit: BoxFit.cover,
                   animate: true,
                 ),
