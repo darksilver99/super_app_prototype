@@ -1,0 +1,68 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'no_data_view_model.dart';
+export 'no_data_view_model.dart';
+
+class NoDataViewWidget extends StatefulWidget {
+  const NoDataViewWidget({super.key});
+
+  @override
+  State<NoDataViewWidget> createState() => _NoDataViewWidgetState();
+}
+
+class _NoDataViewWidgetState extends State<NoDataViewWidget> {
+  late NoDataViewModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NoDataViewModel());
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return Align(
+      alignment: AlignmentDirectional(0.0, 0.0),
+      child: Padding(
+        padding: EdgeInsets.all(32.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.info_rounded,
+              color: FlutterFlowTheme.of(context).secondaryText,
+              size: 48.0,
+            ),
+            Text(
+              'ยังไม่มี Events ในตอนนี้',
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Inter',
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                    fontSize: 18.0,
+                  ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
