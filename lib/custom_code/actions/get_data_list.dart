@@ -8,4 +8,5 @@ import 'package:flutter/material.dart';
 
 Future getDataList() async {
   // Add your function code here!
+  await Future.delayed(const Duration(milliseconds: 1500));
 }
