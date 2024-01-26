@@ -90,7 +90,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'EventsPage';
+  String _currentPageName = 'HomePage';
   late Widget? _currentPage;
 
   @override
