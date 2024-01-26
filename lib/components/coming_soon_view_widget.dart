@@ -56,12 +56,13 @@ class _ComingSoonViewWidgetState extends State<ComingSoonViewWidget> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                height: 100.0,
+                width: 250.0,
+                height: 120.0,
                 decoration: BoxDecoration(),
                 child: Lottie.asset(
                   'assets/lottie_animations/Animation_-_1706261454000.json',
-                  width: MediaQuery.sizeOf(context).width * 0.5,
-                  height: 100.0,
+                  width: 250.0,
+                  height: 120.0,
                   fit: BoxFit.cover,
                   animate: true,
                 ),
@@ -78,7 +79,7 @@ class _ComingSoonViewWidgetState extends State<ComingSoonViewWidget> {
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFF68B848),
+                    color: Color(0xFF3AA8B8),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.white,

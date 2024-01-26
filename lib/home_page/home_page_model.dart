@@ -1,4 +1,5 @@
 import '/backend/schema/structs/index.dart';
+import '/components/coming_soon_view_widget.dart';
 import '/components/loading_view_widget.dart';
 import '/components/no_data_view_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';

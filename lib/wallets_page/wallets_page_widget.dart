@@ -269,160 +269,252 @@ class _WalletsPageWidgetState extends State<WalletsPageWidget>
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
-                      child: Container(
-                        width: 48.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 48.0,
-                              height: 48.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF3AA8B8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.credit_card,
-                                color: FlutterFlowTheme.of(context).info,
-                                size: 24.0,
-                              ),
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: ComingSoonViewWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 48.0,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 48.0,
+                                  height: 48.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF3AA8B8),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.credit_card,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Transfer',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Text(
-                                'Transfer',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 12.0,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation2']!),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation2']!),
+                      ),
                     ),
                     Expanded(
-                      child: Container(
-                        width: 48.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 48.0,
-                              height: 48.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF3AA8B8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.credit_card,
-                                color: FlutterFlowTheme.of(context).info,
-                                size: 24.0,
-                              ),
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: ComingSoonViewWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 48.0,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 48.0,
+                                  height: 48.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF3AA8B8),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.credit_card,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Withdraw',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Text(
-                                'Withdraw',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 12.0,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation3']!),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation3']!),
+                      ),
                     ),
                     Expanded(
-                      child: Container(
-                        width: 48.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 48.0,
-                              height: 48.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF3AA8B8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.insert_drive_file,
-                                color: FlutterFlowTheme.of(context).info,
-                                size: 24.0,
-                              ),
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: ComingSoonViewWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 48.0,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 48.0,
+                                  height: 48.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF3AA8B8),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.insert_drive_file,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Pay Bill',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Text(
-                                'Pay Bill',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 12.0,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation4']!),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation4']!),
+                      ),
                     ),
                     Expanded(
-                      child: Container(
-                        width: 48.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 48.0,
-                              height: 48.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF3AA8B8),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.border_all_rounded,
-                                color: FlutterFlowTheme.of(context).info,
-                                size: 24.0,
-                              ),
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: ComingSoonViewWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 48.0,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 48.0,
+                                  height: 48.0,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF3AA8B8),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.border_all_rounded,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
+                                    'More',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Text(
-                                'More',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 12.0,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation5']!),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation5']!),
+                      ),
                     ),
                   ],
                 ),

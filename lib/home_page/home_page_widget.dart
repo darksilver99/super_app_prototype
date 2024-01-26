@@ -1,4 +1,5 @@
 import '/backend/schema/structs/index.dart';
+import '/components/coming_soon_view_widget.dart';
 import '/components/loading_view_widget.dart';
 import '/components/no_data_view_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -419,34 +420,110 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 16.0, 0.0),
-                                child: Icon(
-                                  Icons.chat_outlined,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ).animateOnPageLoad(
-                                    animationsMap['iconOnPageLoadAnimation1']!),
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 16.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: ComingSoonViewWidget(),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: Icon(
+                                      Icons.chat_outlined,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 24.0,
+                                    ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'iconOnPageLoadAnimation1']!),
+                                ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 16.0, 0.0),
-                                child: Icon(
-                                  Icons.notifications_none_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ).animateOnPageLoad(
-                                    animationsMap['iconOnPageLoadAnimation2']!),
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 16.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: ComingSoonViewWidget(),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: Icon(
+                                      Icons.notifications_none_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 24.0,
+                                    ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'iconOnPageLoadAnimation2']!),
+                                ),
                               ),
-                              Icon(
-                                Icons.qr_code_scanner,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ).animateOnPageLoad(
-                                  animationsMap['iconOnPageLoadAnimation3']!),
+                              Builder(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: AlignmentDirectional(
+                                                  0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: ComingSoonViewWidget(),
+                                        );
+                                      },
+                                    ).then((value) => setState(() {}));
+                                  },
+                                  child: Icon(
+                                    Icons.qr_code_scanner,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
+                                ).animateOnPageLoad(
+                                    animationsMap['iconOnPageLoadAnimation3']!),
+                              ),
                             ],
                           ),
                         ],
