@@ -5,6 +5,7 @@ import 'coming_soon_view_widget.dart' show ComingSoonViewWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class ComingSoonViewModel extends FlutterFlowModel<ComingSoonViewWidget> {
