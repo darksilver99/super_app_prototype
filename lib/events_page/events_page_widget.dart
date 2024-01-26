@@ -123,6 +123,13 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
     'dividerOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
@@ -230,6 +237,13 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
     'dividerOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
