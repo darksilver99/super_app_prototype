@@ -14,7 +14,7 @@ Future getDataList(String? str) async {
   // Add your function code here!
   await Future.delayed(Duration(milliseconds: 1200));
   print("getDataList");
-  var url = "https://silver-api.com/webboard/App_api_v1/testDataListaa";
+  var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
   Map<String, String> header = {};
   var body = {"str": str};
   var response =
