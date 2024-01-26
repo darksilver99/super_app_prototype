@@ -668,7 +668,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       Radius.circular(16.0),
                                                 ),
                                                 child: Image.network(
-                                                  'https://picsum.photos/seed/928/600',
+                                                  testListItem.image,
                                                   width: 200.0,
                                                   height: 120.0,
                                                   fit: BoxFit.cover,
