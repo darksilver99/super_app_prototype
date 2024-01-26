@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -22,35 +21,6 @@ class FFAppState extends ChangeNotifier {
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
-  }
-
-  List<dynamic> _testList2 = [];
-  List<dynamic> get testList2 => _testList2;
-  set testList2(List<dynamic> _value) {
-    _testList2 = _value;
-  }
-
-  void addToTestList2(dynamic _value) {
-    _testList2.add(_value);
-  }
-
-  void removeFromTestList2(dynamic _value) {
-    _testList2.remove(_value);
-  }
-
-  void removeAtIndexFromTestList2(int _index) {
-    _testList2.removeAt(_index);
-  }
-
-  void updateTestList2AtIndex(
-    int _index,
-    dynamic Function(dynamic) updateFn,
-  ) {
-    _testList2[_index] = updateFn(_testList2[_index]);
-  }
-
-  void insertAtIndexInTestList2(int _index, dynamic _value) {
-    _testList2.insert(_index, _value);
   }
 
   List<TestListJsonStruct> _testList = [];
@@ -80,6 +50,42 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInTestList(int _index, TestListJsonStruct _value) {
     _testList.insert(_index, _value);
+  }
+
+  List<String> _testList2 = [
+    'Hello World',
+    'Hello World',
+    'Hello World',
+    'Hello World',
+    'Hello World',
+    'Hello World'
+  ];
+  List<String> get testList2 => _testList2;
+  set testList2(List<String> _value) {
+    _testList2 = _value;
+  }
+
+  void addToTestList2(String _value) {
+    _testList2.add(_value);
+  }
+
+  void removeFromTestList2(String _value) {
+    _testList2.remove(_value);
+  }
+
+  void removeAtIndexFromTestList2(int _index) {
+    _testList2.removeAt(_index);
+  }
+
+  void updateTestList2AtIndex(
+    int _index,
+    String Function(String) updateFn,
+  ) {
+    _testList2[_index] = updateFn(_testList2[_index]);
+  }
+
+  void insertAtIndexInTestList2(int _index, String _value) {
+    _testList2.insert(_index, _value);
   }
 }
 
