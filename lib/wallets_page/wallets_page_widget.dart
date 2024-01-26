@@ -9,10 +9,10 @@ import 'wallets_page_model.dart';
 export 'wallets_page_model.dart';
 
 class WalletsPageWidget extends StatefulWidget {
-  const WalletsPageWidget({Key? key}) : super(key: key);
+  const WalletsPageWidget({super.key});
 
   @override
-  _WalletsPageWidgetState createState() => _WalletsPageWidgetState();
+  State<WalletsPageWidget> createState() => _WalletsPageWidgetState();
 }
 
 class _WalletsPageWidgetState extends State<WalletsPageWidget> {
@@ -44,13 +44,15 @@ class _WalletsPageWidgetState extends State<WalletsPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).accent1,
+        backgroundColor: Color(0xFF181A1E),
         body: SafeArea(
           top: true,
           child: Column(
