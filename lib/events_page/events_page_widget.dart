@@ -120,6 +120,18 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
         ),
       ],
     ),
+    'dividerOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: Offset(-100.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
     'containerOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -211,6 +223,18 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
           delay: 0.ms,
           duration: 800.ms,
           begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'dividerOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: Offset(-100.0, 0.0),
           end: Offset(0.0, 0.0),
         ),
       ],
@@ -588,7 +612,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                     thickness: 1.0,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                  ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'dividerOnPageLoadAnimation1']!),
                                 ],
                               );
                             },
@@ -895,7 +920,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                     thickness: 1.0,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                  ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'dividerOnPageLoadAnimation2']!),
                                 ],
                               );
                             },
