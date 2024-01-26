@@ -332,7 +332,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                           EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                       child: Builder(
                         builder: (context) {
-                          final testList = FFAppState().testList.toList();
+                          final testList = FFAppState().testList2.toList();
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
@@ -640,7 +640,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                           EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                       child: Builder(
                         builder: (context) {
-                          final testList = FFAppState().testList.toList();
+                          final testList = FFAppState().testList2.toList();
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,

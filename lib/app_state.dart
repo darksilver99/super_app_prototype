@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -22,24 +23,17 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> _testList = [
-    'Hello World',
-    'Hello World',
-    'Hello World',
-    'Hello World',
-    'Hello World',
-    'Hello World'
-  ];
-  List<String> get testList => _testList;
-  set testList(List<String> _value) {
+  List<dynamic> _testList = [];
+  List<dynamic> get testList => _testList;
+  set testList(List<dynamic> _value) {
     _testList = _value;
   }
 
-  void addToTestList(String _value) {
+  void addToTestList(dynamic _value) {
     _testList.add(_value);
   }
 
-  void removeFromTestList(String _value) {
+  void removeFromTestList(dynamic _value) {
     _testList.remove(_value);
   }
 
@@ -49,13 +43,42 @@ class FFAppState extends ChangeNotifier {
 
   void updateTestListAtIndex(
     int _index,
-    String Function(String) updateFn,
+    dynamic Function(dynamic) updateFn,
   ) {
     _testList[_index] = updateFn(_testList[_index]);
   }
 
-  void insertAtIndexInTestList(int _index, String _value) {
+  void insertAtIndexInTestList(int _index, dynamic _value) {
     _testList.insert(_index, _value);
+  }
+
+  List<dynamic> _testList2 = [];
+  List<dynamic> get testList2 => _testList2;
+  set testList2(List<dynamic> _value) {
+    _testList2 = _value;
+  }
+
+  void addToTestList2(dynamic _value) {
+    _testList2.add(_value);
+  }
+
+  void removeFromTestList2(dynamic _value) {
+    _testList2.remove(_value);
+  }
+
+  void removeAtIndexFromTestList2(int _index) {
+    _testList2.removeAt(_index);
+  }
+
+  void updateTestList2AtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _testList2[_index] = updateFn(_testList2[_index]);
+  }
+
+  void insertAtIndexInTestList2(int _index, dynamic _value) {
+    _testList2.insert(_index, _value);
   }
 }
 
