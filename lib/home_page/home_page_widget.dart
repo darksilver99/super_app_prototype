@@ -692,7 +692,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        'Campfire Retreat',
+                                                        getJsonField(
+                                                          testListItem,
+                                                          r'''$.subject''',
+                                                        ).toString(),
                                                         textAlign:
                                                             TextAlign.start,
                                                         maxLines: 1,
