@@ -13,7 +13,6 @@ import 'package:http/http.dart' as http;
 Future getDataList() async {
   // Add your function code here!
   print("getDataList");
-  await Future.delayed(const Duration(milliseconds: 1500));
   var url = "https://silver-api.com/webboard/App_api_v1/webboardList";
   Map<String, String> header = {};
   var body = {};
