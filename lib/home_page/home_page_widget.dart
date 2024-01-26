@@ -473,6 +473,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   borderRadius: BorderRadius.circular(16.0),
                                   child: Image.network(
                                     'https://picsum.photos/seed/176/600',
+                                    height: 168.0,
                                     fit: BoxFit.cover,
                                   ),
                                 ).animateOnPageLoad(animationsMap[
@@ -509,7 +510,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 4.0, 0.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
@@ -524,7 +526,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
