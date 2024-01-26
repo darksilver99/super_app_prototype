@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future getDataList() async {
+Future getDataList(String? str) async {
   // Add your function code here!
   print("getDataList");
   var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
   Map<String, String> header = {};
-  var body = {};
+  var body = {"str": str};
   var response =
       await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   List<dynamic> jsonData = json.decode(response.body);

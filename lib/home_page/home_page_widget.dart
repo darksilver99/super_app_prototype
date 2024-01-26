@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -297,7 +298,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.getDataList();
+      await actions.getDataList(
+        null,
+      );
       setState(() {
         _model.isLoading = false;
       });
@@ -848,11 +851,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 child: TextFormField(
                                   controller: _model.textController,
                                   focusNode: _model.textFieldFocusNode,
+                                  onChanged: (_) => EasyDebounce.debounce(
+                                    '_model.textController',
+                                    Duration(milliseconds: 2000),
+                                    () => setState(() {}),
+                                  ),
                                   onFieldSubmitted: (_) async {
                                     setState(() {
                                       _model.isLoading = true;
                                     });
-                                    await actions.getDataList();
+                                    await actions.getDataList(
+                                      _model.textController.text,
+                                    );
                                     await actions.hideKeyboard(
                                       context,
                                     );
@@ -899,6 +909,22 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
+                                    suffixIcon: _model
+                                            .textController!.text.isNotEmpty
+                                        ? InkWell(
+                                            onTap: () async {
+                                              _model.textController?.clear();
+                                              setState(() {});
+                                            },
+                                            child: Icon(
+                                              Icons.clear,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              size: 22.0,
+                                            ),
+                                          )
+                                        : null,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
