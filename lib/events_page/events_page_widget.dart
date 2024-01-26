@@ -593,7 +593,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Icon(
-                                                  Icons.location_on_rounded,
+                                                  Icons.pin_drop_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -901,7 +901,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Icon(
-                                                  Icons.location_on_rounded,
+                                                  Icons.pin_drop_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
