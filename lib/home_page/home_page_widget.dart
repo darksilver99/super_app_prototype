@@ -1,10 +1,10 @@
+import '/backend/schema/structs/index.dart';
 import '/components/loading_view_widget.dart';
 import '/components/no_data_view_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -693,13 +693,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        valueOrDefault<String>(
-                                                          TestListJsonStruct
-                                                                  .maybeFromMap(
-                                                                      testListItem)
-                                                              ?.subject,
-                                                          '-',
-                                                        ),
+                                                        testListItem.subject,
                                                         textAlign:
                                                             TextAlign.start,
                                                         maxLines: 1,

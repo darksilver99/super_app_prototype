@@ -24,35 +24,6 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<dynamic> _testList = [];
-  List<dynamic> get testList => _testList;
-  set testList(List<dynamic> _value) {
-    _testList = _value;
-  }
-
-  void addToTestList(dynamic _value) {
-    _testList.add(_value);
-  }
-
-  void removeFromTestList(dynamic _value) {
-    _testList.remove(_value);
-  }
-
-  void removeAtIndexFromTestList(int _index) {
-    _testList.removeAt(_index);
-  }
-
-  void updateTestListAtIndex(
-    int _index,
-    dynamic Function(dynamic) updateFn,
-  ) {
-    _testList[_index] = updateFn(_testList[_index]);
-  }
-
-  void insertAtIndexInTestList(int _index, dynamic _value) {
-    _testList.insert(_index, _value);
-  }
-
   List<dynamic> _testList2 = [];
   List<dynamic> get testList2 => _testList2;
   set testList2(List<dynamic> _value) {
@@ -80,6 +51,35 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInTestList2(int _index, dynamic _value) {
     _testList2.insert(_index, _value);
+  }
+
+  List<TestListJsonStruct> _testList = [];
+  List<TestListJsonStruct> get testList => _testList;
+  set testList(List<TestListJsonStruct> _value) {
+    _testList = _value;
+  }
+
+  void addToTestList(TestListJsonStruct _value) {
+    _testList.add(_value);
+  }
+
+  void removeFromTestList(TestListJsonStruct _value) {
+    _testList.remove(_value);
+  }
+
+  void removeAtIndexFromTestList(int _index) {
+    _testList.removeAt(_index);
+  }
+
+  void updateTestListAtIndex(
+    int _index,
+    TestListJsonStruct Function(TestListJsonStruct) updateFn,
+  ) {
+    _testList[_index] = updateFn(_testList[_index]);
+  }
+
+  void insertAtIndexInTestList(int _index, TestListJsonStruct _value) {
+    _testList.insert(_index, _value);
   }
 }
 
