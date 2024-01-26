@@ -25,7 +25,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'columnOnPageLoadAnimation1': AnimationInfo(
+    'containerOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -39,12 +39,12 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 400.ms,
-          begin: Offset(30.0, 0.0),
+          begin: Offset(0.0, 40.0),
           end: Offset(0.0, 0.0),
         ),
       ],
     ),
-    'columnOnPageLoadAnimation2': AnimationInfo(
+    'stackOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -58,7 +58,159 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 400.ms,
-          begin: Offset(30.0, 0.0),
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 500.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 500.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation3': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'stackOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation4': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 400.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation5': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 500.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 500.ms,
+          begin: Offset(0.0, 40.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'rowOnPageLoadAnimation6': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: Offset(0.0, 40.0),
           end: Offset(0.0, 0.0),
         ),
       ],
@@ -259,7 +411,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                 ),
                                               ],
                                             ),
-                                          ),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'containerOnPageLoadAnimation1']!),
                                         ),
                                       ),
                                       Expanded(
@@ -271,15 +424,20 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                           children: [
                                             Stack(
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    'https://images.unsplash.com/photo-1505842465776-3b4953ca4f44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8ZmVzdGl2YWx8ZW58MHx8fHwxNzA2MjM3NTY0fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                    width: double.infinity,
-                                                    height: 150.0,
-                                                    fit: BoxFit.cover,
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      'https://images.unsplash.com/photo-1505842465776-3b4953ca4f44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8ZmVzdGl2YWx8ZW58MHx8fHwxNzA2MjM3NTY0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                      width: double.infinity,
+                                                      height: 150.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
                                                 Align(
@@ -343,7 +501,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'stackOnPageLoadAnimation1']!),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
@@ -361,7 +520,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                     ),
                                                   ),
                                                 ],
-                                              ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'rowOnPageLoadAnimation1']!),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -389,7 +549,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'rowOnPageLoadAnimation2']!),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -416,7 +577,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'rowOnPageLoadAnimation3']!),
                                           ],
                                         ),
                                       ),
@@ -428,8 +590,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                         .secondaryText,
                                   ),
                                 ],
-                              ).animateOnPageLoad(
-                                  animationsMap['columnOnPageLoadAnimation1']!);
+                              );
                             },
                           );
                         },
@@ -557,7 +718,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                 ),
                                               ],
                                             ),
-                                          ),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'containerOnPageLoadAnimation2']!),
                                         ),
                                       ),
                                       Expanded(
@@ -569,15 +731,20 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                           children: [
                                             Stack(
                                               children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/866/600',
-                                                    width: double.infinity,
-                                                    height: 150.0,
-                                                    fit: BoxFit.cover,
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNnx8Y2l0eXxlbnwwfHx8fDE3MDYyMzg0NTd8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                      width: double.infinity,
+                                                      height: 150.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
                                                 Align(
@@ -641,7 +808,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'stackOnPageLoadAnimation2']!),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
@@ -659,7 +827,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                     ),
                                                   ),
                                                 ],
-                                              ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'rowOnPageLoadAnimation4']!),
                                             ),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -687,7 +856,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'rowOnPageLoadAnimation5']!),
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -714,7 +884,8 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                                   ),
                                                 ),
                                               ],
-                                            ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'rowOnPageLoadAnimation6']!),
                                           ],
                                         ),
                                       ),
@@ -726,8 +897,7 @@ class _EventsPageWidgetState extends State<EventsPageWidget>
                                         .secondaryText,
                                   ),
                                 ],
-                              ).animateOnPageLoad(
-                                  animationsMap['columnOnPageLoadAnimation2']!);
+                              );
                             },
                           );
                         },
