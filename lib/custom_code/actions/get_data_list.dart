@@ -19,4 +19,7 @@ Future getDataList() async {
   var response =
       await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   List<dynamic> jsonData = json.decode(response.body);
+  for (var i = 0; i < jsonData.length; i++) {
+    FFAppState().addToTestList(jsonData);
+  }
 }
