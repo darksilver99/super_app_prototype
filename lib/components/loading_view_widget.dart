@@ -46,7 +46,7 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
       child: Container(
         decoration: BoxDecoration(),
         child: Lottie.asset(
-          'assets/lottie_animations/Animation_-_1706250708420.json',
+          'assets/lottie_animations/Animation_-_1706256948062.json',
           width: 150.0,
           height: 130.0,
           fit: BoxFit.cover,
