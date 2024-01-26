@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -692,10 +693,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        getJsonField(
-                                                          testListItem,
-                                                          r'''$.subject''',
-                                                        ).toString(),
+                                                        valueOrDefault<String>(
+                                                          TestListJsonStruct
+                                                                  .maybeFromMap(
+                                                                      testListItem)
+                                                              ?.subject,
+                                                          '-',
+                                                        ),
                                                         textAlign:
                                                             TextAlign.start,
                                                         maxLines: 1,
