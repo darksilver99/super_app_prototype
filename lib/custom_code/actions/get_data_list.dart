@@ -23,9 +23,8 @@ Future getDataList() async {
       .map((jsonItem) => TestListJsonStruct(
             id: jsonItem['id'],
             subject: jsonItem['subject'],
-            detail: jsonItem['detail'],
+            image: jsonItem['image'],
             createDate: jsonItem['createDate'],
-            hits: jsonItem['hits'],
           ))
       .toList();
   FFAppState().testList = list;
