@@ -87,6 +87,35 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInTestList2(int _index, String _value) {
     _testList2.insert(_index, _value);
   }
+
+  List<TestListJsonStruct> _eventList = [];
+  List<TestListJsonStruct> get eventList => _eventList;
+  set eventList(List<TestListJsonStruct> _value) {
+    _eventList = _value;
+  }
+
+  void addToEventList(TestListJsonStruct _value) {
+    _eventList.add(_value);
+  }
+
+  void removeFromEventList(TestListJsonStruct _value) {
+    _eventList.remove(_value);
+  }
+
+  void removeAtIndexFromEventList(int _index) {
+    _eventList.removeAt(_index);
+  }
+
+  void updateEventListAtIndex(
+    int _index,
+    TestListJsonStruct Function(TestListJsonStruct) updateFn,
+  ) {
+    _eventList[_index] = updateFn(_eventList[_index]);
+  }
+
+  void insertAtIndexInEventList(int _index, TestListJsonStruct _value) {
+    _eventList.insert(_index, _value);
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

@@ -13,6 +13,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -536,21 +537,29 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 4.0, 0.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16.0),
-                                child: Image.network(
-                                  'https://picsum.photos/seed/176/600',
-                                  height: 168.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['imageOnPageLoadAnimation1']!),
+                          if (FFAppState().testList.length >= 1)
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 4.0, 0.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  child: Image.network(
+                                    FFAppState().testList[0].image,
+                                    height: 168.0,
+                                    fit: BoxFit.cover,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Image.asset(
+                                      'assets/images/error_image.jpeg',
+                                      height: 168.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ).animateOnPageLoad(animationsMap[
+                                    'imageOnPageLoadAnimation1']!),
+                              ),
                             ),
-                          ),
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -558,60 +567,88 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 4.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxM3x8c3Vuc2V0fGVufDB8fHx8MTcwNjIyMTgyOXww&ixlib=rb-4.0.3&q=80&w=400',
-                                        width: double.infinity,
-                                        height: 80.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ).animateOnPageLoad(animationsMap[
-                                        'imageOnPageLoadAnimation2']!),
-                                  ),
+                                  if (FFAppState().testList.length >= 2)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 4.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          FFAppState().testList[1].image,
+                                          width: double.infinity,
+                                          height: 80.0,
+                                          fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                            'assets/images/error_image.jpeg',
+                                            width: double.infinity,
+                                            height: 80.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ).animateOnPageLoad(animationsMap[
+                                          'imageOnPageLoadAnimation2']!),
+                                    ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 4.0, 0.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                              child: Image.network(
-                                                'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHx0ZWF8ZW58MHx8fHwxNzA2MTk4MTU5fDA&ixlib=rb-4.0.3&q=80&w=400',
-                                                height: 80.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                                'imageOnPageLoadAnimation3']!),
+                                        if (FFAppState().testList.length >= 3)
+                                          Expanded(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 4.0, 0.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                child: Image.network(
+                                                  FFAppState()
+                                                      .testList[2]
+                                                      .image,
+                                                  height: 80.0,
+                                                  fit: BoxFit.cover,
+                                                  errorBuilder: (context, error,
+                                                          stackTrace) =>
+                                                      Image.asset(
+                                                    'assets/images/error_image.jpeg',
+                                                    height: 80.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'imageOnPageLoadAnimation3']!),
+                                            ),
                                           ),
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    4.0, 0.0, 0.0, 0.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                              child: Image.network(
-                                                'https://images.unsplash.com/photo-1541167760496-1628856ab772?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxjb2ZmZWV8ZW58MHx8fHwxNzA2MjQxNjE3fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                height: 80.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                                'imageOnPageLoadAnimation4']!),
+                                        if (FFAppState().testList.length >= 4)
+                                          Expanded(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                child: Image.network(
+                                                  FFAppState()
+                                                      .testList[3]
+                                                      .image,
+                                                  height: 80.0,
+                                                  fit: BoxFit.cover,
+                                                  errorBuilder: (context, error,
+                                                          stackTrace) =>
+                                                      Image.asset(
+                                                    'assets/images/error_image.jpeg',
+                                                    height: 80.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'imageOnPageLoadAnimation4']!),
+                                            ),
                                           ),
-                                        ),
                                       ],
                                     ),
                                   ),
@@ -628,35 +665,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 4.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16.0),
-                              child: Image.network(
-                                'https://picsum.photos/seed/438/600',
-                                width: 100.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ).animateOnPageLoad(
-                                animationsMap['imageOnPageLoadAnimation5']!),
-                          ),
-                          Expanded(
-                            child: Padding(
+                          if (FFAppState().testList.length >= 5)
+                            Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 0.0, 0.0, 0.0),
+                                  0.0, 0.0, 4.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: Image.network(
-                                  'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxjaXR5fGVufDB8fHx8MTcwNjIzODQ1N3ww&ixlib=rb-4.0.3&q=80&w=1080',
+                                  FFAppState().testList[4].image,
+                                  width: 100.0,
                                   height: 200.0,
                                   fit: BoxFit.cover,
                                 ),
                               ).animateOnPageLoad(
-                                  animationsMap['imageOnPageLoadAnimation6']!),
+                                  animationsMap['imageOnPageLoadAnimation5']!),
                             ),
-                          ),
+                          if (FFAppState().testList.length >= 6)
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 0.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  child: Image.network(
+                                    FFAppState().testList[5].image,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Image.asset(
+                                      'assets/images/error_image.jpeg',
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ).animateOnPageLoad(animationsMap[
+                                    'imageOnPageLoadAnimation6']!),
+                              ),
+                            ),
                         ],
                       ),
                     ),
@@ -736,18 +782,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 0.0, 8.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
-                                final testList = FFAppState().testList.toList();
-                                if (testList.isEmpty) {
+                                final eventList =
+                                    FFAppState().eventList.toList();
+                                if (eventList.isEmpty) {
                                   return NoDataViewWidget();
                                 }
                                 return SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(testList.length,
-                                        (testListIndex) {
-                                      final testListItem =
-                                          testList[testListIndex];
+                                    children: List.generate(eventList.length,
+                                        (eventListIndex) {
+                                      final eventListItem =
+                                          eventList[eventListIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
@@ -776,10 +823,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       Radius.circular(16.0),
                                                 ),
                                                 child: Image.network(
-                                                  testListItem.image,
+                                                  eventListItem.image,
                                                   width: 200.0,
                                                   height: 120.0,
                                                   fit: BoxFit.cover,
+                                                  errorBuilder: (context, error,
+                                                          stackTrace) =>
+                                                      Image.asset(
+                                                    'assets/images/error_image.jpeg',
+                                                    width: 200.0,
+                                                    height: 120.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
                                               Padding(
@@ -791,7 +846,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      testListItem.subject,
+                                                      eventListItem.subject,
                                                       textAlign:
                                                           TextAlign.start,
                                                       maxLines: 1,
