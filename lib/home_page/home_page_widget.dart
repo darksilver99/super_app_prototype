@@ -790,8 +790,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 0.0, 8.0, 0.0, 0.0),
                             child: Builder(
                               builder: (context) {
-                                final eventList =
-                                    FFAppState().eventList.toList();
+                                final eventList = FFAppState()
+                                    .eventList
+                                    .toList()
+                                    .take(6)
+                                    .toList();
                                 if (eventList.isEmpty) {
                                   return NoDataViewWidget();
                                 }
