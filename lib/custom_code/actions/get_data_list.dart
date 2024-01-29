@@ -19,7 +19,8 @@ Future getDataList(String? str) async {
   var body = {"str": str};
 
   //widget
-  var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  //var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  var url = "http://43.254.133.98:3033/api/recommend/list";
   var response =
       await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   if (response.statusCode == 200) {
