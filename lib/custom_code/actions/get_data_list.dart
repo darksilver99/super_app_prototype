@@ -20,7 +20,7 @@ Future getDataList(String? str) async {
 
   //widget
   //var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
-  var url = "http://43.254.133.98:3033/api/recommend/list";
+  var url = "http://43.254.133.98:3033/api/recommend/list/app";
   var response =
       await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   if (response.statusCode == 200) {
@@ -37,7 +37,7 @@ Future getDataList(String? str) async {
   }
 
   //event
-  var url2 = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  var url2 = "http://43.254.133.98:3033/api/recommend/list/event";
   var response2 =
       await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
   if (response2.statusCode == 200) {
