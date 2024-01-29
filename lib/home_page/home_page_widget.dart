@@ -763,7 +763,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ],
                         ),
                       ),
-                    if (FFAppState().testList.isNotEmpty)
+                    if (FFAppState().eventList.isNotEmpty)
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
