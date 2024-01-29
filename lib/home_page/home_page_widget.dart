@@ -1142,7 +1142,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ? InkWell(
                                             onTap: () async {
                                               _model.textController?.clear();
-                                              setState(() {});
+                                              setState(() {
+                                                _model.isLoading = true;
+                                              });
+                                              await actions.getDataList(null);
+                                              setState(() {
+                                                _model.isLoading = false;
+                                              });
                                             },
                                             child: Icon(
                                               Icons.clear,
