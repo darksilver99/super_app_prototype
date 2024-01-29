@@ -11,10 +11,12 @@ class TestListJsonStruct extends BaseStruct {
     String? subject,
     String? image,
     String? createDate,
+    String? type,
   })  : _id = id,
         _subject = subject,
         _image = image,
-        _createDate = createDate;
+        _createDate = createDate,
+        _type = type;
 
   // "id" field.
   String? _id;
@@ -40,12 +42,19 @@ class TestListJsonStruct extends BaseStruct {
   set createDate(String? val) => _createDate = val;
   bool hasCreateDate() => _createDate != null;
 
+  // "type" field.
+  String? _type;
+  String get type => _type ?? '';
+  set type(String? val) => _type = val;
+  bool hasType() => _type != null;
+
   static TestListJsonStruct fromMap(Map<String, dynamic> data) =>
       TestListJsonStruct(
         id: data['id'] as String?,
         subject: data['subject'] as String?,
         image: data['image'] as String?,
         createDate: data['create_date'] as String?,
+        type: data['type'] as String?,
       );
 
   static TestListJsonStruct? maybeFromMap(dynamic data) => data is Map
@@ -57,6 +66,7 @@ class TestListJsonStruct extends BaseStruct {
         'subject': _subject,
         'image': _image,
         'create_date': _createDate,
+        'type': _type,
       }.withoutNulls;
 
   @override
@@ -75,6 +85,10 @@ class TestListJsonStruct extends BaseStruct {
         ),
         'create_date': serializeParam(
           _createDate,
+          ParamType.String,
+        ),
+        'type': serializeParam(
+          _type,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -101,6 +115,11 @@ class TestListJsonStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        type: deserializeParam(
+          data['type'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -112,12 +131,13 @@ class TestListJsonStruct extends BaseStruct {
         id == other.id &&
         subject == other.subject &&
         image == other.image &&
-        createDate == other.createDate;
+        createDate == other.createDate &&
+        type == other.type;
   }
 
   @override
   int get hashCode =>
-      const ListEquality().hash([id, subject, image, createDate]);
+      const ListEquality().hash([id, subject, image, createDate, type]);
 }
 
 TestListJsonStruct createTestListJsonStruct({
@@ -125,10 +145,12 @@ TestListJsonStruct createTestListJsonStruct({
   String? subject,
   String? image,
   String? createDate,
+  String? type,
 }) =>
     TestListJsonStruct(
       id: id,
       subject: subject,
       image: image,
       createDate: createDate,
+      type: type,
     );
