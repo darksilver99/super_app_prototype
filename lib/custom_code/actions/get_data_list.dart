@@ -21,16 +21,16 @@ Future getDataList(String? str) async {
   //widget
   var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
   var response =
-  await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
+      await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   if (response.statusCode == 200) {
     List<dynamic> jsonData = json.decode(response.body);
     List<TestListJsonStruct> list = jsonData
         .map((jsonItem) => TestListJsonStruct(
-      id: jsonItem['id'],
-      subject: jsonItem['subject'],
-      image: jsonItem['image'],
-      createDate: jsonItem['createDate'],
-    ))
+              id: jsonItem['id'],
+              subject: jsonItem['subject'],
+              image: jsonItem['image'],
+              createDate: jsonItem['createDate'],
+            ))
         .toList();
     FFAppState().testList = list;
   }
@@ -39,16 +39,16 @@ Future getDataList(String? str) async {
   var url2 = "https://silver-api.com/webboard/App_api_v1/testDataList";
   body = {"str": "a1"};
   var response2 =
-  await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
+      await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
   if (response2.statusCode == 200) {
     List<dynamic> jsonData = json.decode(response2.body);
     List<TestListJsonStruct> list = jsonData
         .map((jsonItem) => TestListJsonStruct(
-      id: jsonItem['id'],
-      subject: jsonItem['subject'],
-      image: jsonItem['image'],
-      createDate: jsonItem['createDate'],
-    ))
+              id: jsonItem['id'],
+              subject: jsonItem['subject'],
+              image: jsonItem['image'],
+              createDate: jsonItem['createDate'],
+            ))
         .toList();
     FFAppState().eventList = list;
   }
