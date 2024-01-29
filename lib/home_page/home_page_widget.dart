@@ -234,6 +234,25 @@ class _HomePageWidgetState extends State<HomePageWidget>
         ),
       ],
     ),
+    'imageOnPageLoadAnimation7': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 700.ms,
+          begin: Offset(20.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
     'rowOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -673,7 +692,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            if (FFAppState().testList.length >= 5)
+                            if (FFAppState().testList.length >= 6)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 4.0, 0.0),
@@ -687,6 +706,29 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                                 ).animateOnPageLoad(animationsMap[
                                     'imageOnPageLoadAnimation5']!),
+                              ),
+                            if (FFAppState().testList.length == 5)
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 0.0, 0.0, 0.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      FFAppState().testList[4].image,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                      errorBuilder:
+                                          (context, error, stackTrace) =>
+                                              Image.asset(
+                                        'assets/images/error_image.jpeg',
+                                        height: 200.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'imageOnPageLoadAnimation6']!),
+                                ),
                               ),
                             if (FFAppState().testList.length >= 6)
                               Expanded(
@@ -708,7 +750,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'imageOnPageLoadAnimation6']!),
+                                      'imageOnPageLoadAnimation7']!),
                                 ),
                               ),
                           ],

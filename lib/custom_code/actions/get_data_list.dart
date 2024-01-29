@@ -37,7 +37,6 @@ Future getDataList(String? str) async {
 
   //event
   var url2 = "https://silver-api.com/webboard/App_api_v1/testDataList";
-  body = {"str": "a1"};
   var response2 =
       await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
   if (response2.statusCode == 200) {
