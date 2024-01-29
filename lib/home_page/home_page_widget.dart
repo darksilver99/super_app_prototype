@@ -13,7 +13,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:octo_image/octo_image.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -703,6 +702,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     width: 100.0,
                                     height: 200.0,
                                     fit: BoxFit.cover,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Image.asset(
+                                      'assets/images/error_image.jpg',
+                                      width: 100.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
                                     'imageOnPageLoadAnimation5']!),
