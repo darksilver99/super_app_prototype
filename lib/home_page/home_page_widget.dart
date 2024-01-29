@@ -571,7 +571,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       errorBuilder:
                                           (context, error, stackTrace) =>
                                               Image.asset(
-                                        'assets/images/error_image.jpeg',
+                                        'assets/images/error_image.jpg',
                                         height: 168.0,
                                         fit: BoxFit.cover,
                                       ),
@@ -602,7 +602,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             errorBuilder:
                                                 (context, error, stackTrace) =>
                                                     Image.asset(
-                                              'assets/images/error_image.jpeg',
+                                              'assets/images/error_image.jpg',
                                               width: double.infinity,
                                               height: 80.0,
                                               fit: BoxFit.cover,
@@ -637,7 +637,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             error,
                                                             stackTrace) =>
                                                         Image.asset(
-                                                      'assets/images/error_image.jpeg',
+                                                      'assets/images/error_image.jpg',
                                                       height: 80.0,
                                                       fit: BoxFit.cover,
                                                     ),
@@ -666,7 +666,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             error,
                                                             stackTrace) =>
                                                         Image.asset(
-                                                      'assets/images/error_image.jpeg',
+                                                      'assets/images/error_image.jpg',
                                                       height: 80.0,
                                                       fit: BoxFit.cover,
                                                     ),
@@ -721,7 +721,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       errorBuilder:
                                           (context, error, stackTrace) =>
                                               Image.asset(
-                                        'assets/images/error_image.jpeg',
+                                        'assets/images/error_image.jpg',
                                         height: 200.0,
                                         fit: BoxFit.cover,
                                       ),
@@ -744,7 +744,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       errorBuilder:
                                           (context, error, stackTrace) =>
                                               Image.asset(
-                                        'assets/images/error_image.jpeg',
+                                        'assets/images/error_image.jpg',
                                         height: 200.0,
                                         fit: BoxFit.cover,
                                       ),
@@ -883,7 +883,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   errorBuilder: (context, error,
                                                           stackTrace) =>
                                                       Image.asset(
-                                                    'assets/images/error_image.jpeg',
+                                                    'assets/images/error_image.jpg',
                                                     width: 200.0,
                                                     height: 120.0,
                                                     fit: BoxFit.cover,
