@@ -23,7 +23,7 @@ Future getDataList(String? str) async {
   var body = {"str": str};
 
   //widget
-  var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  var url = "https://silver-api.com/webboard/App_api_v1/testDataList?type=app&str=$str";
   //var url = "http://43.254.133.98:3033/api/recommend/list/app?str=$str";
   //var response = await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
   var response = await http.get(Uri.parse(url));
@@ -42,7 +42,7 @@ Future getDataList(String? str) async {
   }
 
   //event
-  var url2 = "https://silver-api.com/webboard/App_api_v1/testDataList";
+  var url2 = "https://silver-api.com/webboard/App_api_v1/testDataList?type=event&str=$str";
   //var url2 = "http://43.254.133.98:3033/api/recommend/list/event?str=$str";
   //var response2 = await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
   var response2 = await http.get(Uri.parse(url2));
