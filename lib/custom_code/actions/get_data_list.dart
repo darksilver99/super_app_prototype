@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 
 Future getDataList(String? str) async {
   // Add your function code here!
-  //await Future.delayed(Duration(milliseconds: 600));
+  await Future.delayed(Duration(milliseconds: 1000));
   print("getDataList");
 
   str = str ?? "";
