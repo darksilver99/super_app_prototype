@@ -15,14 +15,21 @@ Future getDataList(String? str) async {
   await Future.delayed(Duration(milliseconds: 1200));
   print("getDataList");
 
+  str = str ?? "";
+  print("strstr");
+  print(str);
   Map<String, String> header = {};
   var body = {"str": str};
-
+  // var url = "https://silver-api.com/webboard/App_api_v1/testDataList?type=event&str=$str";
   //widget
-  //var url = "https://silver-api.com/webboard/App_api_v1/testDataList";
-  var url = "http://43.254.133.98:3033/api/recommend/list/app";
-  var response =
-      await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
+  var url = "";
+  if (str == '' || str == null) {
+    url = "http://43.254.133.98:3033/api/recommend/list/app";
+  } else {
+    url = "http://43.254.133.98:3033/api/recommend/list/app?str=$str";
+  }
+  //var response = await http.post(Uri.parse(url), body: jsonEncode(body), headers: header);
+  var response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
     List<dynamic> jsonData = json.decode(response.body);
     List<TestListJsonStruct> list = jsonData
@@ -31,15 +38,21 @@ Future getDataList(String? str) async {
               subject: jsonItem['subject'],
               image: jsonItem['image'],
               createDate: jsonItem['createDate'],
+              type: jsonItem['type'],
             ))
         .toList();
     FFAppState().testList = list;
   }
 
   //event
-  var url2 = "http://43.254.133.98:3033/api/recommend/list/event";
-  var response2 =
-      await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
+  var url2 = "";
+  if (str == '' || str == null) {
+    url2 = "http://43.254.133.98:3033/api/recommend/list/event";
+  } else {
+    url2 = "http://43.254.133.98:3033/api/recommend/list/event?str=$str";
+  }
+  //var response2 = await http.post(Uri.parse(url2), body: jsonEncode(body), headers: header);
+  var response2 = await http.get(Uri.parse(url2));
   if (response2.statusCode == 200) {
     List<dynamic> jsonData = json.decode(response2.body);
     List<TestListJsonStruct> list = jsonData
@@ -48,6 +61,7 @@ Future getDataList(String? str) async {
               subject: jsonItem['subject'],
               image: jsonItem['image'],
               createDate: jsonItem['createDate'],
+              type: jsonItem['type'],
             ))
         .toList();
     FFAppState().eventList = list;
