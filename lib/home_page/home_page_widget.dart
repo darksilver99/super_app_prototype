@@ -375,6 +375,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   setState(() {
                     _model.isLoading = true;
                   });
+                  setState(() {
+                    _model.textController?.clear();
+                  });
                   await actions.getDataList(
                     null,
                   );
