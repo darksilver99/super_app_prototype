@@ -65,6 +65,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'WalletsPage')
               : WalletsPageWidget(),
+        ),
+        FFRoute(
+          name: 'DetailPage',
+          path: '/detailPage',
+          builder: (context, params) => DetailPageWidget(
+            subject: params.getParam('subject', ParamType.String),
+            image: params.getParam('image', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
