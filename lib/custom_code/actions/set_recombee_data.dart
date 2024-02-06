@@ -15,7 +15,7 @@ Future setRecombeeData(String? id) async {
   try {
     print("setRecombeeData $id");
     await http
-        .get(Uri.parse("http://43.254.133.98:3033/api/recommend/buy/$id"));
+        .get(Uri.parse("http://43.254.133.98:3033/api/recommend/view/$id"));
   } catch (e) {
     print(e);
   }
