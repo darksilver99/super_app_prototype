@@ -605,19 +605,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           }.withoutNulls,
                                         );
                                       },
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: Image.network(
-                                          FFAppState().testList[0].image,
-                                          height: 168.0,
-                                          fit: BoxFit.cover,
-                                          errorBuilder:
-                                              (context, error, stackTrace) =>
-                                                  Image.asset(
-                                            'assets/images/error_image.jpg',
+                                      child: Hero(
+                                        tag: FFAppState().testList[0].image,
+                                        transitionOnUserGestures: true,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          child: Image.network(
+                                            FFAppState().testList[0].image,
                                             height: 168.0,
                                             fit: BoxFit.cover,
+                                            errorBuilder:
+                                                (context, error, stackTrace) =>
+                                                    Image.asset(
+                                              'assets/images/error_image.jpg',
+                                              height: 168.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -665,21 +669,29 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 }.withoutNulls,
                                               );
                                             },
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                              child: Image.network(
-                                                FFAppState().testList[1].image,
-                                                width: double.infinity,
-                                                height: 80.0,
-                                                fit: BoxFit.cover,
-                                                errorBuilder: (context, error,
-                                                        stackTrace) =>
-                                                    Image.asset(
-                                                  'assets/images/error_image.jpg',
+                                            child: Hero(
+                                              tag: FFAppState()
+                                                  .testList[1]
+                                                  .image,
+                                              transitionOnUserGestures: true,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                child: Image.network(
+                                                  FFAppState()
+                                                      .testList[1]
+                                                      .image,
                                                   width: double.infinity,
                                                   height: 80.0,
                                                   fit: BoxFit.cover,
+                                                  errorBuilder: (context, error,
+                                                          stackTrace) =>
+                                                      Image.asset(
+                                                    'assets/images/error_image.jpg',
+                                                    width: double.infinity,
+                                                    height: 80.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -736,23 +748,30 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         }.withoutNulls,
                                                       );
                                                     },
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              16.0),
-                                                      child: Image.network(
-                                                        FFAppState()
-                                                            .testList[2]
-                                                            .image,
-                                                        height: 80.0,
-                                                        fit: BoxFit.cover,
-                                                        errorBuilder: (context,
-                                                                error,
-                                                                stackTrace) =>
-                                                            Image.asset(
-                                                          'assets/images/error_image.jpg',
+                                                    child: Hero(
+                                                      tag: FFAppState()
+                                                          .testList[2]
+                                                          .image,
+                                                      transitionOnUserGestures:
+                                                          true,
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16.0),
+                                                        child: Image.network(
+                                                          FFAppState()
+                                                              .testList[2]
+                                                              .image,
                                                           height: 80.0,
                                                           fit: BoxFit.cover,
+                                                          errorBuilder: (context,
+                                                                  error,
+                                                                  stackTrace) =>
+                                                              Image.asset(
+                                                            'assets/images/error_image.jpg',
+                                                            height: 80.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -804,23 +823,30 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         }.withoutNulls,
                                                       );
                                                     },
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              16.0),
-                                                      child: Image.network(
-                                                        FFAppState()
-                                                            .testList[3]
-                                                            .image,
-                                                        height: 80.0,
-                                                        fit: BoxFit.cover,
-                                                        errorBuilder: (context,
-                                                                error,
-                                                                stackTrace) =>
-                                                            Image.asset(
-                                                          'assets/images/error_image.jpg',
+                                                    child: Hero(
+                                                      tag: FFAppState()
+                                                          .testList[3]
+                                                          .image,
+                                                      transitionOnUserGestures:
+                                                          true,
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16.0),
+                                                        child: Image.network(
+                                                          FFAppState()
+                                                              .testList[3]
+                                                              .image,
                                                           height: 80.0,
                                                           fit: BoxFit.cover,
+                                                          errorBuilder: (context,
+                                                                  error,
+                                                                  stackTrace) =>
+                                                              Image.asset(
+                                                            'assets/images/error_image.jpg',
+                                                            height: 80.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -873,20 +899,25 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         }.withoutNulls,
                                       );
                                     },
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        FFAppState().testList[4].image,
-                                        width: 100.0,
-                                        height: 200.0,
-                                        fit: BoxFit.cover,
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Image.asset(
-                                          'assets/images/error_image.jpg',
+                                    child: Hero(
+                                      tag: FFAppState().testList[4].image,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          FFAppState().testList[4].image,
                                           width: 100.0,
                                           height: 200.0,
                                           fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                            'assets/images/error_image.jpg',
+                                            width: 100.0,
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -922,19 +953,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           }.withoutNulls,
                                         );
                                       },
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: Image.network(
-                                          FFAppState().testList[4].image,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
-                                          errorBuilder:
-                                              (context, error, stackTrace) =>
-                                                  Image.asset(
-                                            'assets/images/error_image.jpg',
+                                      child: Hero(
+                                        tag: FFAppState().testList[4].image,
+                                        transitionOnUserGestures: true,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          child: Image.network(
+                                            FFAppState().testList[4].image,
                                             height: 200.0,
                                             fit: BoxFit.cover,
+                                            errorBuilder:
+                                                (context, error, stackTrace) =>
+                                                    Image.asset(
+                                              'assets/images/error_image.jpg',
+                                              height: 200.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -971,19 +1006,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           }.withoutNulls,
                                         );
                                       },
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: Image.network(
-                                          FFAppState().testList[5].image,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
-                                          errorBuilder:
-                                              (context, error, stackTrace) =>
-                                                  Image.asset(
-                                            'assets/images/error_image.jpg',
+                                      child: Hero(
+                                        tag: FFAppState().testList[5].image,
+                                        transitionOnUserGestures: true,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          child: Image.network(
+                                            FFAppState().testList[5].image,
                                             height: 200.0,
                                             fit: BoxFit.cover,
+                                            errorBuilder:
+                                                (context, error, stackTrace) =>
+                                                    Image.asset(
+                                              'assets/images/error_image.jpg',
+                                              height: 200.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
