@@ -321,6 +321,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
       await actions.getDataList(
         null,
       );
+      await actions.setAppVersion();
       setState(() {
         _model.isLoading = false;
       });
@@ -438,7 +439,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ),
                                     ),
                                     Text(
-                                      'Jeff',
+                                      'Jeff ${FFAppState().appBuildVersion.toString()}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
