@@ -116,6 +116,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInEventList(int _index, TestListJsonStruct _value) {
     _eventList.insert(_index, _value);
   }
+
+  int _appBuildVersion = 0;
+  int get appBuildVersion => _appBuildVersion;
+  set appBuildVersion(int _value) {
+    _appBuildVersion = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
