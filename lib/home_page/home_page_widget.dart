@@ -581,18 +581,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 4.0, 0.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        FFAppState().testList[0].image,
-                                        height: 168.0,
-                                        fit: BoxFit.cover,
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Image.asset(
-                                          'assets/images/error_image.jpg',
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await actions.setRecombeeData(
+                                          FFAppState().testList[0].id,
+                                        );
+
+                                        context.pushNamed(
+                                          'DetailPage',
+                                          queryParameters: {
+                                            'subject': serializeParam(
+                                              FFAppState().testList[0].subject,
+                                              ParamType.String,
+                                            ),
+                                            'image': serializeParam(
+                                              FFAppState().testList[0].image,
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          FFAppState().testList[0].image,
                                           height: 168.0,
                                           fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                            'assets/images/error_image.jpg',
+                                            height: 168.0,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
@@ -611,21 +637,50 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            child: Image.network(
-                                              FFAppState().testList[1].image,
-                                              width: double.infinity,
-                                              height: 80.0,
-                                              fit: BoxFit.cover,
-                                              errorBuilder: (context, error,
-                                                      stackTrace) =>
-                                                  Image.asset(
-                                                'assets/images/error_image.jpg',
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await actions.setRecombeeData(
+                                                FFAppState().testList[1].id,
+                                              );
+
+                                              context.pushNamed(
+                                                'DetailPage',
+                                                queryParameters: {
+                                                  'subject': serializeParam(
+                                                    FFAppState()
+                                                        .testList[1]
+                                                        .subject,
+                                                    ParamType.String,
+                                                  ),
+                                                  'image': serializeParam(
+                                                    FFAppState()
+                                                        .testList[1]
+                                                        .image,
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                              child: Image.network(
+                                                FFAppState().testList[1].image,
                                                 width: double.infinity,
                                                 height: 80.0,
                                                 fit: BoxFit.cover,
+                                                errorBuilder: (context, error,
+                                                        stackTrace) =>
+                                                    Image.asset(
+                                                  'assets/images/error_image.jpg',
+                                                  width: double.infinity,
+                                                  height: 80.0,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ).animateOnPageLoad(animationsMap[
@@ -644,23 +699,61 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16.0),
-                                                    child: Image.network(
-                                                      FFAppState()
-                                                          .testList[2]
-                                                          .image,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
-                                                      errorBuilder: (context,
-                                                              error,
-                                                              stackTrace) =>
-                                                          Image.asset(
-                                                        'assets/images/error_image.jpg',
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await actions
+                                                          .setRecombeeData(
+                                                        FFAppState()
+                                                            .testList[2]
+                                                            .id,
+                                                      );
+
+                                                      context.pushNamed(
+                                                        'DetailPage',
+                                                        queryParameters: {
+                                                          'subject':
+                                                              serializeParam(
+                                                            FFAppState()
+                                                                .testList[2]
+                                                                .subject,
+                                                            ParamType.String,
+                                                          ),
+                                                          'image':
+                                                              serializeParam(
+                                                            FFAppState()
+                                                                .testList[2]
+                                                                .image,
+                                                            ParamType.String,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
+                                                      child: Image.network(
+                                                        FFAppState()
+                                                            .testList[2]
+                                                            .image,
                                                         height: 80.0,
                                                         fit: BoxFit.cover,
+                                                        errorBuilder: (context,
+                                                                error,
+                                                                stackTrace) =>
+                                                            Image.asset(
+                                                          'assets/images/error_image.jpg',
+                                                          height: 80.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
                                                     ),
                                                   ).animateOnPageLoad(animationsMap[
@@ -674,23 +767,61 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16.0),
-                                                    child: Image.network(
-                                                      FFAppState()
-                                                          .testList[3]
-                                                          .image,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
-                                                      errorBuilder: (context,
-                                                              error,
-                                                              stackTrace) =>
-                                                          Image.asset(
-                                                        'assets/images/error_image.jpg',
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await actions
+                                                          .setRecombeeData(
+                                                        FFAppState()
+                                                            .testList[3]
+                                                            .id,
+                                                      );
+
+                                                      context.pushNamed(
+                                                        'DetailPage',
+                                                        queryParameters: {
+                                                          'subject':
+                                                              serializeParam(
+                                                            FFAppState()
+                                                                .testList[3]
+                                                                .subject,
+                                                            ParamType.String,
+                                                          ),
+                                                          'image':
+                                                              serializeParam(
+                                                            FFAppState()
+                                                                .testList[3]
+                                                                .image,
+                                                            ParamType.String,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
+                                                      child: Image.network(
+                                                        FFAppState()
+                                                            .testList[3]
+                                                            .image,
                                                         height: 80.0,
                                                         fit: BoxFit.cover,
+                                                        errorBuilder: (context,
+                                                                error,
+                                                                stackTrace) =>
+                                                            Image.asset(
+                                                          'assets/images/error_image.jpg',
+                                                          height: 80.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
                                                     ),
                                                   ).animateOnPageLoad(animationsMap[
@@ -718,20 +849,45 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 4.0, 0.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.network(
-                                      FFAppState().testList[4].image,
-                                      width: 100.0,
-                                      height: 200.0,
-                                      fit: BoxFit.cover,
-                                      errorBuilder:
-                                          (context, error, stackTrace) =>
-                                              Image.asset(
-                                        'assets/images/error_image.jpg',
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await actions.setRecombeeData(
+                                        FFAppState().testList[4].id,
+                                      );
+
+                                      context.pushNamed(
+                                        'DetailPage',
+                                        queryParameters: {
+                                          'subject': serializeParam(
+                                            FFAppState().testList[4].subject,
+                                            ParamType.String,
+                                          ),
+                                          'image': serializeParam(
+                                            FFAppState().testList[4].image,
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                      );
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      child: Image.network(
+                                        FFAppState().testList[4].image,
                                         width: 100.0,
                                         height: 200.0,
                                         fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Image.asset(
+                                          'assets/images/error_image.jpg',
+                                          width: 100.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
@@ -742,18 +898,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 0.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        FFAppState().testList[4].image,
-                                        height: 200.0,
-                                        fit: BoxFit.cover,
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Image.asset(
-                                          'assets/images/error_image.jpg',
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await actions.setRecombeeData(
+                                          FFAppState().testList[4].id,
+                                        );
+
+                                        context.pushNamed(
+                                          'DetailPage',
+                                          queryParameters: {
+                                            'subject': serializeParam(
+                                              FFAppState().testList[4].subject,
+                                              ParamType.String,
+                                            ),
+                                            'image': serializeParam(
+                                              FFAppState().testList[4].image,
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          FFAppState().testList[4].image,
                                           height: 200.0,
                                           fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                            'assets/images/error_image.jpg',
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
@@ -765,18 +947,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 0.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        FFAppState().testList[5].image,
-                                        height: 200.0,
-                                        fit: BoxFit.cover,
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Image.asset(
-                                          'assets/images/error_image.jpg',
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await actions.setRecombeeData(
+                                          FFAppState().testList[5].id,
+                                        );
+
+                                        context.pushNamed(
+                                          'DetailPage',
+                                          queryParameters: {
+                                            'subject': serializeParam(
+                                              FFAppState().testList[5].subject,
+                                              ParamType.String,
+                                            ),
+                                            'image': serializeParam(
+                                              FFAppState().testList[5].image,
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          FFAppState().testList[5].image,
                                           height: 200.0,
                                           fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                            'assets/images/error_image.jpg',
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
@@ -881,158 +1089,193 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
-                                            child: Container(
-                                              width: 200.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
-                                                      topLeft:
-                                                          Radius.circular(16.0),
-                                                      topRight:
-                                                          Radius.circular(16.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await actions.setRecombeeData(
+                                                  eventListItem.id,
+                                                );
+
+                                                context.pushNamed(
+                                                  'DetailPage',
+                                                  queryParameters: {
+                                                    'subject': serializeParam(
+                                                      eventListItem.subject,
+                                                      ParamType.String,
                                                     ),
-                                                    child: Image.network(
+                                                    'image': serializeParam(
                                                       eventListItem.image,
-                                                      width: 200.0,
-                                                      height: 120.0,
-                                                      fit: BoxFit.cover,
-                                                      errorBuilder: (context,
-                                                              error,
-                                                              stackTrace) =>
-                                                          Image.asset(
-                                                        'assets/images/error_image.jpg',
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Container(
+                                                width: 200.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        bottomRight:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        topLeft:
+                                                            Radius.circular(
+                                                                16.0),
+                                                        topRight:
+                                                            Radius.circular(
+                                                                16.0),
+                                                      ),
+                                                      child: Image.network(
+                                                        eventListItem.image,
                                                         width: 200.0,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
+                                                        errorBuilder: (context,
+                                                                error,
+                                                                stackTrace) =>
+                                                            Image.asset(
+                                                          'assets/images/error_image.jpg',
+                                                          width: 200.0,
+                                                          height: 120.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.all(8.0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Text(
-                                                          eventListItem.subject,
-                                                          textAlign:
-                                                              TextAlign.start,
-                                                          maxLines: 1,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            eventListItem
+                                                                .subject,
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            maxLines: 1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .av_timer_rounded,
                                                                 color: Colors
                                                                     .black,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
+                                                                size: 18.0,
                                                               ),
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Icon(
-                                                              Icons
-                                                                  .av_timer_rounded,
-                                                              color:
-                                                                  Colors.black,
-                                                              size: 18.0,
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                '19:00 - 22:00',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontSize:
-                                                                          12.0,
-                                                                    ),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  '19:00 - 22:00',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: Colors
+                                                                            .black,
+                                                                        fontSize:
+                                                                            12.0,
+                                                                      ),
+                                                                ),
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Icon(
-                                                              Icons
-                                                                  .pin_drop_rounded,
-                                                              color:
-                                                                  Colors.black,
-                                                              size: 18.0,
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                'The Forestias',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontSize:
-                                                                          12.0,
-                                                                    ),
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .pin_drop_rounded,
+                                                                color: Colors
+                                                                    .black,
+                                                                size: 18.0,
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'The Forestias',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: Colors
+                                                                            .black,
+                                                                        fontSize:
+                                                                            12.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ).animateOnPageLoad(animationsMap[
                                                 'containerOnPageLoadAnimation2']!),
