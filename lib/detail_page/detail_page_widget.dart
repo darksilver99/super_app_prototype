@@ -79,7 +79,7 @@ class _DetailPageWidgetState extends State<DetailPageWidget> {
             },
           ),
           title: Text(
-            'รายละเอียด',
+            'รายละเอียดกิจกรรม',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Readex Pro',
                   color: Colors.white,
@@ -99,18 +99,23 @@ class _DetailPageWidgetState extends State<DetailPageWidget> {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(0.0),
-                    child: Image.network(
-                      widget.image!,
-                      width: double.infinity,
-                      height: 200.0,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) => Image.asset(
-                        'assets/images/error_image.jpg',
+                  child: Hero(
+                    tag: widget.image!,
+                    transitionOnUserGestures: true,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0.0),
+                      child: Image.network(
+                        widget.image!,
                         width: double.infinity,
                         height: 200.0,
                         fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            Image.asset(
+                          'assets/images/error_image.jpg',
+                          width: double.infinity,
+                          height: 200.0,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
