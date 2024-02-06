@@ -73,6 +73,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             subject: params.getParam('subject', ParamType.String),
             image: params.getParam('image', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'MiniAppPage',
+          path: '/miniAppPage',
+          builder: (context, params) => MiniAppPageWidget(
+            subject: params.getParam('subject', ParamType.String),
+            image: params.getParam('image', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

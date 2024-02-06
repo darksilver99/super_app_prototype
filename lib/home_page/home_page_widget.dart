@@ -592,7 +592,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         );
 
                                         context.pushNamed(
-                                          'DetailPage',
+                                          'MiniAppPage',
                                           queryParameters: {
                                             'subject': serializeParam(
                                               FFAppState().testList[0].subject,
@@ -648,7 +648,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               );
 
                                               context.pushNamed(
-                                                'DetailPage',
+                                                'MiniAppPage',
                                                 queryParameters: {
                                                   'subject': serializeParam(
                                                     FFAppState()
@@ -717,7 +717,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       );
 
                                                       context.pushNamed(
-                                                        'DetailPage',
+                                                        'MiniAppPage',
                                                         queryParameters: {
                                                           'subject':
                                                               serializeParam(
@@ -785,7 +785,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       );
 
                                                       context.pushNamed(
-                                                        'DetailPage',
+                                                        'MiniAppPage',
                                                         queryParameters: {
                                                           'subject':
                                                               serializeParam(
@@ -860,7 +860,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       );
 
                                       context.pushNamed(
-                                        'DetailPage',
+                                        'MiniAppPage',
                                         queryParameters: {
                                           'subject': serializeParam(
                                             FFAppState().testList[4].subject,
@@ -909,7 +909,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         );
 
                                         context.pushNamed(
-                                          'DetailPage',
+                                          'MiniAppPage',
                                           queryParameters: {
                                             'subject': serializeParam(
                                               FFAppState().testList[4].subject,
@@ -958,7 +958,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         );
 
                                         context.pushNamed(
-                                          'DetailPage',
+                                          'MiniAppPage',
                                           queryParameters: {
                                             'subject': serializeParam(
                                               FFAppState().testList[5].subject,
@@ -1130,35 +1130,40 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.only(
-                                                        bottomLeft:
-                                                            Radius.circular(
-                                                                0.0),
-                                                        bottomRight:
-                                                            Radius.circular(
-                                                                0.0),
-                                                        topLeft:
-                                                            Radius.circular(
-                                                                16.0),
-                                                        topRight:
-                                                            Radius.circular(
-                                                                16.0),
-                                                      ),
-                                                      child: Image.network(
-                                                        eventListItem.image,
-                                                        width: 200.0,
-                                                        height: 120.0,
-                                                        fit: BoxFit.cover,
-                                                        errorBuilder: (context,
-                                                                error,
-                                                                stackTrace) =>
-                                                            Image.asset(
-                                                          'assets/images/error_image.jpg',
+                                                    Hero(
+                                                      tag: eventListItem.image,
+                                                      transitionOnUserGestures:
+                                                          true,
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius.only(
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topLeft:
+                                                              Radius.circular(
+                                                                  16.0),
+                                                          topRight:
+                                                              Radius.circular(
+                                                                  16.0),
+                                                        ),
+                                                        child: Image.network(
+                                                          eventListItem.image,
                                                           width: 200.0,
                                                           height: 120.0,
                                                           fit: BoxFit.cover,
+                                                          errorBuilder: (context,
+                                                                  error,
+                                                                  stackTrace) =>
+                                                              Image.asset(
+                                                            'assets/images/error_image.jpg',
+                                                            width: 200.0,
+                                                            height: 120.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
